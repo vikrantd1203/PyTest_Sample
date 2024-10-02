@@ -1,12 +1,11 @@
 import pytest
 from selenium.webdriver.common.by import By
 
-@pytest.mark.flaky(reruns=2, reruns_delay=2)  # Retries 3 times with a 2-second delay between retries
 def test_example(selenium):
     selenium.get('https://bstackdemo.com/')
 
     # locating product on webpage and getting name of the product
-    # productText = selenium.find_element(By.XPATH, '//*[@id="1"]/p').text
+    productText = selenium.find_element(By.XPATH, '//*[@id="1"]/p').text
 
     # clicking the 'Add to cart' button
     selenium.find_element(By.XPATH, '//*[@id="1"]/div[4]').click()
